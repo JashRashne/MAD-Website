@@ -15,8 +15,8 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
-      setTheme(JSON.parse(storedTheme));
-      document.documentElement.classList.toggle("dark-mode", JSON.parse(storedTheme) === "dark");
+   //   setTheme(JSON.parse(storedTheme));
+   //   document.documentElement.classList.toggle("dark-mode", JSON.parse(storedTheme) === "dark");
     }
   }, []);
 
