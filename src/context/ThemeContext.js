@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
     setTheme(newTheme);
     localStorage.setItem("theme", JSON.stringify(newTheme));
     document.documentElement.classList.toggle("dark-mode", newTheme === "dark");
-  };
+  }; //testing
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
