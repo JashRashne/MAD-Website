@@ -178,14 +178,16 @@ const CreateNote = () => {
     return;
   };
 
+  //TODO: define light in tailwind config -- lightBg: var(--light-bg);
+  //TODO: loginFont = var(--login-font)
   return (
-    <div style={{ background: "var(--dark-bg)" }}>
-      <div className={styles.pageWrapper}>
+    <div className='bg-darkBg' style={{ background: "var(--dark-bg)" }}>
+      <div className={`${styles.pageWrapper}`}>
         <SideBar user={user} />
-        <div className={styles.noteWrapper}>
-          <h1 className={styles.mainHeading}>Create a Note</h1>
+        <div className={`${styles.noteWrapper}`}>
+          <h1 className={`${styles.mainHeading}`}>Create a Note</h1>
           <hr />
-          <div className={styles.createNoteWrapper}>
+          <div className={`${styles.createNoteWrapper }`}>
             <div className={styles.gridBox}>
               <div className={styles.subjectDiv}>
                 <label>Name*</label>
@@ -212,7 +214,7 @@ const CreateNote = () => {
             </div>
             <div className={styles.gridBox}>
               <label>Select Students</label>
-              <div style={{ display: "flex" }}>
+              <div className='flex' style={{ display: "flex" }}>
                 <select
                   onChange={(e) => {
                     setBatch("All");
@@ -337,7 +339,7 @@ const CreateNote = () => {
             <div className={styles.gridBox}>
               <div className={styles.addNotesDiv}>
                 <label
-                  className={styles.label}
+                  className={`mb-[1rem] ${styles.label}`}
                   style={{ marginBottom: "1rem" }}
                 >
                   Add Notes*
@@ -360,6 +362,7 @@ const CreateNote = () => {
                           }}
                           name="attachment"
                           hidden
+                          className='none'
                           style={{ display: "none" }}
                         />
                         <span className={styles.browseText}> Browse</span>
@@ -370,7 +373,9 @@ const CreateNote = () => {
                       </div>
                     </div>
                     {uploadMediaStatus && (
-                      <p style={{ color: "#fff", marginTop: "5px" }}>
+                      <p className='text-[#fff] mt-[5px]' 
+                      // style={{ color: "#fff", marginTop: "5px" }}
+                      >
                         Uploaded {media.name}
                       </p>
                     )}

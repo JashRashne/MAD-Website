@@ -148,17 +148,26 @@ const Downloads = () => {
   }, [user]);
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div 
+    // style={{ display: "flex", flexDirection: "row" }}
+    className='flex'
+    >
       {loading && <Spinner />}
       <SideBar user={user} />
       <div className={styles.root}>
-        <div className={styles.operations} style={{ minHeight: "0" }}>
+        <div className={`min-h-0  ${styles.operations}`} 
+        
+        // style={{ minHeight: "0" }}
+        
+        >
           <div className={styles.twobutton}>
             {buttons.map((button) => (
               <button
                 key={button.region}
-                className={styles.item}
-                style={{ width: "36.5vw", height: "16vh" }}
+                className={` w-[36.5vw] h-[16vh] ${styles.item}`}
+
+                // style={{ width: "36.5vw", height: "16vh" }}
+
                 onClick={() => handleClick(button.region)}
               >
                 {button.label}:{" "}
@@ -170,7 +179,11 @@ const Downloads = () => {
           </div>
         </div>
 
-        <div className={styles.recent} style={{ height: "76vh" }}>
+        <div className={`h-[76vh] ${styles.recent}`} 
+        
+        // style={{ height: "76vh" }}
+        
+        >
           <div className={styles.headings}>
             <h3>Previous CSV collection</h3>
             <input

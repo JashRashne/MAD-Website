@@ -138,11 +138,18 @@ export default function Admin() {
   ));
 
   return (
-    <div style={{ background: "var(--dark-bg)" }}>
+    //darkBg = var(--dark-bg) -- define in talwind.config.js
+    <div className='bg-darkBg' 
+    // style={{ background: "var(--dark-bg)" }}
+    >  
       <div className={styles.pageWrapper}>
         <SideBar user={user} />
         <div className={style.signInUpBody}>
-          <p style={{ color: "var(--dark-bg)", fontSize: "24px" }}>Pending events</p>
+          <p className='bg-darkBg text-[24px]' 
+          
+          // style={{ color: "var(--dark-bg)", fontSize: "24px" }}
+          
+          >Pending events</p>
           {renderedCheckboxes}
           {pendingEvents.length ? (
             <>

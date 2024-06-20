@@ -48,6 +48,7 @@ function MyApp({ Component, pageProps }) {
             crossOrigin="anonymous"
           ></script>
           <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+          <script src="https://cdn.tailwindcss.com"></script> 
         </Head>
         <ToastContainer />
         <Layout>

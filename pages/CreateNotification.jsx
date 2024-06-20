@@ -186,9 +186,12 @@ const CreateNote = () => {
 
     return;
   };
-
+//TODO: darkbg in tailwind config
   return (
-    <div style={{ background: "var(--dark-bg)" }}>
+    <div 
+    className='bg-darkBg'
+    // style={{ background: "var(--dark-bg)" }}
+    >
       <div className={styles.pageWrapper}>
         <Sidebar user={user} />
         <div className={styles.noteWrapper}>
@@ -207,7 +210,11 @@ const CreateNote = () => {
                   className={styles.subjectText}
                 />
               </div>
-              <div className={styles.subjectDiv} style={{ "margin-top": "1rem" }}>
+              <div className={` mt-[1rem] ${styles.subjectDiv}`} 
+              
+              // style={{ "margin-top": "1rem" }}
+              
+              >
                 <label>Subject*</label>
                 <input
                   placeholder="Enter the subject here"
@@ -221,7 +228,10 @@ const CreateNote = () => {
             </div>
             <div className={styles.gridBox}>
               <label>Select Students</label>
-              <div style={{ display: "flex", flexwrap: "wrap" }}>
+              <div 
+                className='flex flex-wrap'
+              // style={{ display: "flex", flexwrap: "wrap" }}
+              >
                 <select
                   onChange={(e) => {
                     setBatch("All");
@@ -346,8 +356,8 @@ const CreateNote = () => {
             <div className={styles.gridBox}>
               <div className={styles.addNotesDiv}>
                 <label
-                  className={styles.label}
-                  style={{ marginBottom: "1rem" }}
+                  className={`mb-[1rem] ${styles.label}`}
+                  // style={{ marginBottom: "1rem" }}
                 >
                   Add attachments (Optional)
                 </label>
@@ -369,7 +379,8 @@ const CreateNote = () => {
                           }}
                           name="attachment"
                           hidden
-                          style={{ display: "none" }}
+                          // style={{ display: "none" }}
+                          className='none'
                         />
                         <span className={styles.browseText}> Browse</span>
                       </div>
@@ -379,7 +390,11 @@ const CreateNote = () => {
                       </div>
                     </div>
                     {uploadMediaStatus && (
-                      <p style={{ color: "#fff", marginTop: "5px" }}>
+                      <p 
+                      className='text-[#fff] mt-[5px]'
+                      // style={{ color: "#fff", marginTop: "5px" }}
+                      
+                      >
                         Uploaded {media.name}
                       </p>
                     )}
