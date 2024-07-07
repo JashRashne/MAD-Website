@@ -10,13 +10,13 @@ export const ThemeProvider = ({ children }) => {
     setTheme(newTheme);
     localStorage.setItem("theme", JSON.stringify(newTheme));
     document.documentElement.classList.toggle("dark-mode", newTheme === "dark");
-  };
+  }; //testing
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
-      setTheme(JSON.parse(storedTheme));
-      document.documentElement.classList.toggle("dark-mode", JSON.parse(storedTheme) === "dark");
+   //   setTheme(JSON.parse(storedTheme));
+   //   document.documentElement.classList.toggle("dark-mode", JSON.parse(storedTheme) === "dark");
     }
   }, []);
 
